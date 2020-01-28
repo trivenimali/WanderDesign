@@ -1,0 +1,117 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title style="font-weight: bold; font-size: 24px;">
+      Filter
+      <button type="button" class="btn btn-link">Done</button>
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="padding-top: 20px;">
+  <div style="padding: 20px;">
+    <ion-label class="label"> Show me
+    </ion-label>
+  </div>
+
+  <ion-card>
+    <div>
+      <ion-grid style="background-color: rgb(199, 199, 199);">
+        <ion-row>
+          <ion-col size="3">
+            <div style="padding-left:16px">
+              All
+              <!-- <ion-button size="small" color="light">All</ion-button> -->
+            </div>
+          </ion-col>
+          <ion-col size="3">
+            <div>
+              Events
+              <!-- <ion-button size="small" color="light">Events</ion-button> -->
+            </div>
+          </ion-col>
+          <ion-col size="3">
+            <div>
+              Spots
+              <!-- <ion-button size="small" color="light">Spots</ion-button> -->
+            </div>
+          </ion-col>
+          <ion-col size="3">
+            <div>
+              Journeys
+              <!--style="background-color: rgb(14, 23, 51);"<ion-button size="small" color="light">Journeys</ion-button> -->
+            </div>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </ion-card>
+
+  <div style="padding: 20px;">
+    <ion-label class="label"> Location
+    </ion-label>
+  </div>
+  <ion-card>
+    <div>
+      <ion-grid style="padding: 6px; background-color: rgb(199, 199, 199);">
+        <ion-row>
+          <ion-col>
+            <div style="color:rgb(61, 60, 60);">Current Location</div>
+          </ion-col>
+          <ion-col style="color: rgb(160, 158, 158);">
+            (San Francisco)
+          <ion-icon name="navigate" style="float: right;"></ion-icon>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </div>
+  </ion-card>
+
+  <div style="padding: 20px;">
+    <ion-label class="label">Distance</ion-label>
+    <ion-label class="label" style="float:right;">{{changeValues}}Km</ion-label>
+    <ion-item>
+      <ion-range min="1" max="100" color="primary" [(ngModel)]="changeValues">
+        <!-- <ion-label slot="start">0km</ion-label> -->
+        <!-- <ion-label slot="end">100km</ion-label> -->
+      </ion-range>
+    </ion-item>
+  </div>
+
+  <div style="padding: 20px;">
+    <ion-label class="label">Price range</ion-label>
+    <ion-label class="label" style="float: right;">${{this.minprice1}}-${{this.maxPrice1}}</ion-label>
+    <ion-item>
+      <ion-range dualKnobs="true" [min]=minPrice [max]=maxPrice step="3" snaps="true" [(ngModel)]="price"
+        (ionChange)="changePrice(price)"></ion-range>
+    </ion-item>
+  </div>
+</ion-content>
+
+<ion-tabs>
+  <ion-tab-bar slot="bottom">
+    <ion-tab-button tab="tab1" routerLink='/tab1'>
+      <ion-icon name="albums"></ion-icon>
+      <!-- <ion-label>Tab One</ion-label> -->
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab2" routerLink='/tab2'>
+      <ion-icon name="compass"></ion-icon>
+      <!-- <ion-label>Tab Two</ion-label> -->
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab3" routerLink='/tab3'>
+      <ion-icon name="star"></ion-icon>
+      <!-- <ion-label>Tab Three</ion-label> -->
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab4" routerLink='/tab4'>
+      <ion-icon name="text"></ion-icon>
+      <!-- <ion-label>Tab Four</ion-label> -->
+    </ion-tab-button>
+
+    <ion-tab-button tab="tab5" routerLink='/tab5'>
+      <ion-icon name="person"></ion-icon>
+      <!-- <ion-label>Tab Five</ion-label> -->
+    </ion-tab-button>
+  </ion-tab-bar>
+</ion-tabs>

@@ -1,0 +1,34 @@
+.button-effect{
+    transform: translate3d(-12px, -65px, 0px) scale(1); 
+    height: 10px; 
+    width: 5px; 
+    opacity: 0; 
+    transition: transform 345ms ease 0s, 
+    opacity 241ms ease 104ms;
+}
+
+/* Bottom left text */
+.bottom-left {
+    position: absolute;
+    bottom: 8px;
+    left: 16px;
+    color: white;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 12px;
+    font-weight: bold;
+}
+
+.badge-right{
+position: absolute;
+bottom: 8px;
+right: 16px;
+size: 10px;
+}
+
+
+.btn{
+    border-radius: 12px;
+    background-color: rgb(88, 88, 88);
+    color: white;
+}
+
